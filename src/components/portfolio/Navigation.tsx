@@ -33,8 +33,18 @@ const Navigation = () => {
                 <span>{item.name}</span>
               </a>
             ))}
-            <Button variant="glow" size="sm">
-              Download CV
+            <Button 
+              variant="glow" 
+              size="sm"
+              asChild
+            >
+              <a 
+                href="https://docs.google.com/document/d/1MXzGMlhXDkjxGOWZWpN03kFtqC2f0QX-/export?format=pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
             </Button>
           </div>
 
@@ -63,8 +73,19 @@ const Navigation = () => {
                 <span>{item.name}</span>
               </a>
             ))}
-            <Button variant="glow" size="sm" className="w-full">
-              Download CV
+            <Button 
+              variant="glow" 
+              size="sm" 
+              className="w-full"
+              asChild
+            >
+              <a 
+                href="https://docs.google.com/document/d/1MXzGMlhXDkjxGOWZWpN03kFtqC2f0QX-/export?format=pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
             </Button>
           </div>
         )}

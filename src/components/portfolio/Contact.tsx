@@ -22,8 +22,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "rudrashiv1510@gmail.com",
-      href: "mailto:rudrashiv1510@gmail.com",
+      value: "rudrashiv1510@gmail.com",  
+      href: "mailto:rudrashiv1510@gmail.com?subject=Portfolio%20Contact&body=Hello%20Rudra%2C%0D%0A%0D%0AMy%20name%20is%20[Your%20Name].%0D%0AI%20am%20interested%20in%20connecting%20with%20you%20regarding%20[Reason].%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]",
       color: "primary"
     },
     {
@@ -58,7 +58,7 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:rudrashiv1510@gmail.com",
+      href: "mailto:rudrashiv1510@gmail.com?subject=Portfolio%20Contact&body=Hello%20Rudra%2C%0D%0A%0D%0AMy%20name%20is%20[Your%20Name].%0D%0AI%20am%20interested%20in%20connecting%20with%20you%20regarding%20[Reason].%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]",
       color: "hover:text-primary"
     }
   ];
@@ -188,9 +188,15 @@ const Contact = () => {
               <div className="space-y-4">
                 <h4 className="font-semibold text-foreground">Quick Actions</h4>
                 <div className="space-y-3">
-                  <Button variant="glow" className="w-full">
-                    <Download className="w-4 h-4" />
-                    Download Resume
+                  <Button variant="glow" className="w-full" asChild>
+                    <a 
+                      href="https://docs.google.com/document/d/1MXzGMlhXDkjxGOWZWpN03kFtqC2f0QX-/export?format=pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download Resume
+                    </a>
                   </Button>
                   <Button variant="hero" className="w-full">
                     <MessageCircle className="w-4 h-4" />
@@ -305,9 +311,11 @@ const Contact = () => {
                 I'm here to help turn your ideas into reality.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="glow" size="lg">
-                  <Mail className="w-5 h-5" />
-                  Start a Conversation
+                <Button variant="glow" size="lg" asChild>
+                  <a href="mailto:rudrashiv1510@gmail.com?subject=Portfolio%20Contact&body=Hello%20Rudra%2C%0D%0A%0D%0AMy%20name%20is%20[Your%20Name].%0D%0AI%20am%20interested%20in%20connecting%20with%20you%20regarding%20[Reason].%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]">
+                    <Mail className="w-5 h-5" />
+                    Start a Conversation
+                  </a>
                 </Button>
                 <Button variant="hero" size="lg">
                   <Calendar className="w-5 h-5" />

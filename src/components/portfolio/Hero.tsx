@@ -34,13 +34,26 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button variant="glow" size="lg" className="group">
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
-                View My Work
+              <Button 
+                variant="glow" 
+                size="lg" 
+                className="group"
+                asChild
+              >
+                <a 
+                  href="https://docs.google.com/document/d/1MXzGMlhXDkjxGOWZWpN03kFtqC2f0QX-/export?format=pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Download className="w-5 h-5 group-hover:animate-bounce" />
+                  Download Resume
+                </a>
               </Button>
-              <Button variant="hero" size="lg">
-                <Mail className="w-5 h-5" />
-                Contact Me
+              <Button variant="hero" size="lg" asChild>
+                <a href="mailto:rudrashiv1510@gmail.com?subject=Portfolio%20Contact&body=Hello%20Rudra%2C%0D%0A%0D%0AMy%20name%20is%20[Your%20Name].%0D%0AI%20am%20interested%20in%20connecting%20with%20you%20regarding%20[Reason].%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]">
+                  <Mail className="w-5 h-5" />
+                  Contact Me
+                </a>
               </Button>
             </div>
 
@@ -65,7 +78,7 @@ const Hero = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:rudrashiv1510@gmail.com"
+                  href="mailto:rudrashiv1510@gmail.com?subject=Portfolio%20Contact&body=Hello%20Rudra%2C%0D%0A%0D%0AMy%20name%20is%20[Your%20Name].%0D%0AI%20am%20interested%20in%20connecting%20with%20you%20regarding%20[Reason].%0D%0A%0D%0ARegards,%0D%0A[Your%20Name]"
                   className="p-2 rounded-lg bg-card/20 hover:bg-card/40 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-soft"
                 >
                   <Mail className="w-5 h-5" />

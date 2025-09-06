@@ -82,7 +82,8 @@ const Contact = () => {
         subject: formData.subject,
         message: formData.message,
         to_name: "Rudra Pratap Singh",
-        to_email: "rudrashiv1510@gmail.com"
+        to_email: "rudrashiv1510@gmail.com",
+        reply_to: formData.email
       };
 
       await emailjs.send(

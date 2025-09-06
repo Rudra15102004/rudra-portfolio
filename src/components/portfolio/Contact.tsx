@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Github, Linkedin, Send, Download, MessageCircle, Calendar } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -73,8 +74,24 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Rudra Pratap Singh",
+        to_email: "rudrashiv1510@gmail.com"
+      };
+
+      await emailjs.send(
+        'service_7kbgv2q', // Service ID
+        'template_u7el3dg', // Template ID
+        templateParams,
+        'GJzim6NBWo1N9NqmW' // Public Key
+      );
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
@@ -86,9 +103,16 @@ const Contact = () => {
         subject: "",
         message: ""
       });
-      
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly at rudrashiv1510@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const getGradientColor = (color: string) => {
